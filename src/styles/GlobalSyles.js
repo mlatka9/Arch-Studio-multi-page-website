@@ -11,10 +11,10 @@ html{
 
 body{
     margin: 0;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Spartan', sans-serif;
 }
 
 a, button, input{
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Spartan', sans-serif;
 }
 `;
