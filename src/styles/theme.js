@@ -11,6 +11,7 @@ export const theme = {
     red: {
       100: 'hsl(0, 68%, 61%)',
     },
+    white: '#FFF',
   },
   fontSize: {
     xxl: '200px',
