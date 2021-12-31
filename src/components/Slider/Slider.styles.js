@@ -13,7 +13,7 @@ export const SliderNav = styled.nav`
 
 export const SliderViewWrapper = styled.div`
   position: relative;
-  height: 800px;
+  height: 700px;
   width: 100%;
   color: ${({ theme }) => theme.colors.white};
   @media (max-width: 700px) {

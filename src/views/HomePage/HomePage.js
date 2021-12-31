@@ -1,7 +1,9 @@
 import Slider from 'components/Slider/Slider';
 import welcomeImage from 'assets/images/home-images/desktop/image-welcome.jpg';
+
 import { SliderImageWrapper, SliderDetails } from 'components/Slider/Slider.styles';
 import { Hero, HeroTablet, HeroMobile } from 'assets/images/home-images/index';
+
 import Button from 'components/Button/Button';
 import { Link } from 'react-router-dom';
 import { HeroViewWrapper, WelcomeWrapper, FeaturedViewWrapper, FeaturedCardsWrapper } from './HomePage.styles';
@@ -36,7 +38,7 @@ const HomePage = () => {
       <HeroViewWrapper>
         <SliderImageWrapper>
           <source srcSet={Hero} media="(min-width: 850px)" />
-          <source srcSet={HeroTablet} media="(min-width: 500px)" />
+          <source srcSet={HeroTablet} media="(min-width: 700px)" />
           <img src={HeroMobile} alt="Small team, big ideas" />
         </SliderImageWrapper>
         <SliderDetails>
@@ -49,7 +51,9 @@ const HomePage = () => {
       <FeaturedViewWrapper>
         <div>
           <h2>Featured</h2>
-          <Button label="See All" hasArrow />
+          <Link to="/portfolio">
+            <Button label="See All" hasArrow />
+          </Link>
         </div>
         <FeaturedCardsWrapper>
           {portfolioData

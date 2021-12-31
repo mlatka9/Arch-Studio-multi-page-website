@@ -88,6 +88,9 @@ export const HeroViewWrapper = styled(SliderViewWrapper)`
 
 export const FeaturedViewWrapper = styled.div`
   margin-bottom: 200px;
+  a {
+    text-decoration: none;
+  }
   @media (max-width: 700px) {
     padding: 0 30px;
     margin-bottom: 100px;

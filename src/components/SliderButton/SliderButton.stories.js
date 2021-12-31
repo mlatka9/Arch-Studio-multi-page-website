@@ -1,11 +1,11 @@
 import React from 'react';
-import CarouselButton from './CarouselButton';
+import SliderButton from './SliderButton';
 
 export default {
-  component: CarouselButton,
+  component: SliderButton,
 };
 
-const Template = (args) => <CarouselButton {...args} />;
+const Template = (args) => <SliderButton {...args} />;
 
 export const IsSelected = Template.bind({});
 IsSelected.args = {

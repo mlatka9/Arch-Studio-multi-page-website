@@ -1,11 +1,17 @@
 import styled from 'styled-components';
+import { motion } from 'framer-motion/dist/framer-motion';
 
 export const Wrapper = styled.div`
+  position: relative;
+`;
+export const NavigationWrapper = styled.div`
   display: flex;
   align-items: center;
   height: 150px;
   padding: 0 165px;
   position: relative;
+  background-color: ${({ theme }) => theme.colors.white};
+  z-index: 100000;
   @media (max-width: 1200px) {
     padding: 0 120px;
   }
@@ -62,7 +68,7 @@ export const Wrapper = styled.div`
     }
   }
 `;
-export const Navigation = styled.nav`
+export const Navigation = styled(motion.nav)`
   display: flex;
   gap: 55px;
   @media (max-width: 1000px) {
@@ -89,7 +95,6 @@ export const MobileNavigation = styled(Navigation)`
   display: none;
   flex-direction: column;
   position: absolute;
-  z-index: 100;
   width: calc(100% - 30px);
   background-color: ${({ theme }) => theme.colors.grey[500]};
   color: ${({ theme }) => theme.colors.grey[100]};
@@ -97,8 +102,13 @@ export const MobileNavigation = styled(Navigation)`
   bottom: 1px;
   right: 0;
   transform: translateY(100%);
+  z-index: 100;
+  overflow: hidden;
   @media (max-width: 700px) {
     display: flex;
+  }
+  span {
+    display: block;
   }
 
   a {
@@ -132,5 +142,16 @@ export const MenuButton = styled.div`
     &:nth-last-of-type(3) {
       transform: ${({ isMenuOpen }) => (isMenuOpen ? 'translate(0, 11px) rotate(45deg)' : 'translate(0, 21px)')};
     }
+  }
+`;
+
+export const MenuBackDrop = styled(motion.div)`
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 80;
+  display: none;
+  @media (max-width: 700px) {
+    display: block;
   }
 `;

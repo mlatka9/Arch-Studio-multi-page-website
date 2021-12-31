@@ -1,6 +1,6 @@
 import { ImageFilter, Wrapper } from './PortfolioCard.styles';
 
-const item = {
+const card = {
   hidden: { opacity: 0, x: 30 },
   show: {
     opacity: 1,
@@ -13,10 +13,10 @@ const item = {
 
 const PortfolioCard = ({ imgageSrc, title, subtitle }) => {
   return (
-    <Wrapper variants={item}>
+    <Wrapper variants={card}>
       <picture>
-        <source srcSet={imgageSrc.desktop} media="(min-width: 850px)" />
-        <source srcSet={imgageSrc.tablet} media="(min-width: 500px)" />
+        <source srcSet={imgageSrc.desktop} media="(min-width: 851px)" />
+        <source srcSet={imgageSrc.tablet} media="(min-width: 700px)" />
         <img src={imgageSrc.mobile} alt={title} />
       </picture>
       <ImageFilter />

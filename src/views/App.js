@@ -23,21 +23,28 @@ const Content = styled.main`
   }
 `;
 
+const Wrapper = styled.div`
+  max-width: 1700px;
+  margin: 0 auto;
+`;
+
 function App() {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
-      <Header />
-      <Content>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="portfolio" element={<PortfolioPage />} />
-          <Route path="about" element={<AboutUsPage />} />
-          <Route path="contact" element={<ContactPage />} />
-          <Route path="*" element={<Navigate to="/" />} />
-        </Routes>
-      </Content>
-      <Footer />
+      <Wrapper>
+        <Header />
+        <Content>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="portfolio" element={<PortfolioPage />} />
+            <Route path="about" element={<AboutUsPage />} />
+            <Route path="contact" element={<ContactPage />} />
+            <Route path="*" element={<Navigate to="/" />} />
+          </Routes>
+        </Content>
+        <Footer />
+      </Wrapper>
     </ThemeProvider>
   );
 }
