@@ -43,16 +43,15 @@ const Wrapper = styled.div`
       display: flex;
       justify-content: center;
       align-items: center;
+      path {
+        fill: white;
+      }
       &:hover {
         opacity: 1;
         display: flex;
         background-color: rgba(0, 0, 0, 0.5);
         a {
           display: block;
-
-          path {
-            fill: white;
-          }
         }
       }
     }

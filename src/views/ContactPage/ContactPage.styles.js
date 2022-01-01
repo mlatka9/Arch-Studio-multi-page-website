@@ -1,31 +1,36 @@
 import styled from 'styled-components';
 
 export const DetailsWrapper = styled.div`
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
   margin-bottom: 200px;
   @media (max-width: 1100px) {
-    flex-direction: column;
+    grid-template-columns: 1fr;
   }
   @media (max-width: 700px) {
     margin-bottom: 100px;
     padding: 0 30px;
   }
-  div {
-    margin-left: 30px;
-    @media (max-width: 1100px) {
-      margin: 30px 0;
-    }
-  }
   h2 {
     width: min-content;
     @media (max-width: 1100px) {
       width: unset;
+      margin-bottom: 50px;
     }
     @media (max-width: 700px) {
     }
   }
 `;
+
+export const ContactCardWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  @media (max-width: 1100px) {
+    flex-direction: column;
+    gap: 40px;
+  }
+`;
+
 export const ContactCard = styled.div`
   color: ${({ theme }) => theme.colors.grey[200]};
   font-size: ${({ theme }) => theme.fontSize.s};
@@ -64,6 +69,7 @@ export const ContactCard = styled.div`
       justify-self: flex-end;
     }
     @media (max-width: 700px) {
+      margin-top: 20px;
       grid-row: unset;
       grid-column: unset;
       justify-self: unset;
@@ -71,6 +77,39 @@ export const ContactCard = styled.div`
 
     img {
       margin-left: 15px;
+    }
+  }
+`;
+
+export const StyledForm = styled.form`
+  width: 100%;
+  input {
+    margin-bottom: 40px;
+  }
+  textarea {
+    display: block;
+  }
+  button {
+    margin-left: auto;
+  }
+`;
+
+export const FormWrapper = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  margin-bottom: 200px;
+  @media (max-width: 1100px) {
+    grid-template-columns: 1fr;
+  }
+  @media (max-width: 700px) {
+    margin-bottom: 100px;
+    padding: 0 30px;
+  }
+  h2 {
+    width: min-content;
+    @media (max-width: 1100px) {
+      width: unset;
+      margin-bottom: 50px;
     }
   }
 `;

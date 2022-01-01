@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const Content = styled.main`
   padding: 0 165px;
+  min-height: 1500px;
   @media (max-width: 1200px) {
     padding: 0 120px;
   }
