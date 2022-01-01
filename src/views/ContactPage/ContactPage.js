@@ -5,8 +5,7 @@ import { ContactCard, DetailsWrapper, StyledForm, FormWrapper, ContactCardWrappe
 import ArrowIcon from 'assets/icons/arrow-icon.png';
 import FormField from 'components/FormField/FormField';
 import Button from 'components/Button/Button';
-import { useState } from 'react';
-import { Wrapper as MapsWrapper, Status } from '@googlemaps/react-wrapper';
+import { useState, useRef } from 'react';
 import Map from 'components/Map/Map';
 
 const data = {
@@ -23,15 +22,20 @@ const location = {
   lng: -122.08427,
 };
 
+function isEmailValid(email) {
+  var re = /\S+@\S+\.\S+/;
+  return re.test(email);
+}
+
+const initialFormValues = [
+  { name: 'name', value: '', isError: false, errorMessage: '' },
+  { name: 'email', value: '', isError: false, errorMessage: '' },
+  { name: 'messgae', value: '', isError: false, errorMessage: '' },
+];
+
 const ContactPage = () => {
-  const [formValues, setFormValues] = useState([
-    { name: 'name', value: '', isError: false },
-    { name: 'value', value: '', isError: false },
-    { name: 'messgae', value: '', isError: false },
-  ]);
-
-  console.log(formValues[0].value, formValues[1].value, formValues[2].value);
-
+  const mapRef = useRef(null);
+  const [formValues, setFormValues] = useState(initialFormValues);
   const handleOnChange = (e) => {
     setFormValues(
       formValues.map((formValue) => {
@@ -43,20 +47,32 @@ const ContactPage = () => {
     );
   };
 
+  const handleClearForm = () => {
+    setFormValues(initialFormValues);
+  };
+
+  const handleScollToMap = () => {
+    mapRef.current.scrollIntoView({ behavior: 'smooth' });
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const newFormValues = formValues.map((formValue) => {
       if (formValue.value.trim().length === 0) {
-        return { ...formValue, isError: true };
+        return { ...formValue, isError: true, errorMessage: "Can't be empty" };
       }
-      return { ...formValue, isError: false };
+      if (formValue.name === 'email') {
+        if (!isEmailValid(formValue.value)) {
+          return { ...formValue, isError: true, errorMessage: 'Not valid email' };
+        }
+      }
+      return { ...formValue, isError: false, errorMessage: '' };
     });
     setFormValues(newFormValues);
-    console.log(newFormValues);
-  };
-
-  const render = (status) => {
-    return <h1>{status}</h1>;
+    if (newFormValues.every((formValue) => !formValue.isError)) {
+      console.log('process sending form');
+      handleClearForm();
+    }
   };
 
   return (
@@ -81,7 +97,7 @@ const ContactPage = () => {
             <p>
               <span>Phone:</span>123-456-3451
             </p>
-            <button>
+            <button onClick={handleScollToMap}>
               View on Map <img src={ArrowIcon} alt="View on Map"></img>
             </button>
           </ContactCard>
@@ -96,13 +112,13 @@ const ContactPage = () => {
             <p>
               <span>Phone:</span>832-123-4321
             </p>
-            <button>
+            <button onClick={handleScollToMap}>
               View on Map <img src={ArrowIcon} alt="View on Map"></img>
             </button>
           </ContactCard>
         </ContactCardWrapper>
       </DetailsWrapper>
-      <Map location={location} zoomLevel={17} />
+      <Map location={location} zoomLevel={17} ref={mapRef} />
       <FormWrapper>
         <Title>Connect with us</Title>
         <StyledForm onSubmit={handleSubmit}>

@@ -3,12 +3,12 @@ import styled from 'styled-components';
 export const DetailsWrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr 2fr;
-  margin-bottom: 200px;
+  margin-bottom: 100px;
   @media (max-width: 1100px) {
     grid-template-columns: 1fr;
   }
   @media (max-width: 700px) {
-    margin-bottom: 100px;
+    margin-bottom: 50px;
     padding: 0 30px;
   }
   h2 {

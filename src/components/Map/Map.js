@@ -7,6 +7,7 @@ const Wrapper = styled.div`
   width: 100%;
   height: 650px;
   margin-bottom: 200px;
+  padding-top: 100px;
   @media (max-width: 1100px) {
     height: 560px;
   }
@@ -15,6 +16,7 @@ const Wrapper = styled.div`
   }
   @media (max-width: 700px) {
     height: 450px;
+    padding-top: 50px;
   }
   @media (max-width: 700px) {
     margin-bottom: 100px;
@@ -39,8 +41,8 @@ const defaultCenter = {
   lng: locations.reduce((sum, location) => location.lng + sum, 0) / locations.length,
 };
 
-const Map = ({ location, zoomLevel }) => (
-  <Wrapper>
+const Map = React.forwardRef(({ location, zoomLevel }, ref) => (
+  <Wrapper ref={ref}>
     <GoogleMapReact
       bootstrapURLKeys={{ key: 'AIzaSyAGSzpjVkyij2Lf8shfPHVRJu4mFaD_ieM' }}
       defaultCenter={defaultCenter}
@@ -53,6 +55,6 @@ const Map = ({ location, zoomLevel }) => (
       <LocationPin lat={locations[0].lat} lng={locations[0].lng} text={locations[0].address} />
     </GoogleMapReact>
   </Wrapper>
-);
+));
 
 export default Map;

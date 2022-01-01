@@ -48,7 +48,12 @@ const Slider = () => {
         </SliderDetails>
         <SliderNav>
           {sliderData.map((_, id) => (
-            <CarouselButton label={`0${id + 1}`} isSelected={id === currentPage} onClick={() => setCurrentPage(id)} />
+            <CarouselButton
+              key={id}
+              label={`0${id + 1}`}
+              isSelected={id === currentPage}
+              onClick={() => setCurrentPage(id)}
+            />
           ))}
         </SliderNav>
       </SliderViewWrapper>

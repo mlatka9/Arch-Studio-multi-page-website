@@ -1,7 +1,12 @@
 import PropTypes from 'prop-types';
 import { Wrapper, StyledInput } from './FormField.styles';
 
-const FormField = ({ placeholder, isTextArea = false, data: { name, value, isError }, handleOnChange }) => {
+const FormField = ({
+  placeholder,
+  isTextArea = false,
+  data: { name, value, isError, errorMessage },
+  handleOnChange,
+}) => {
   return (
     <Wrapper isTextArea={isTextArea}>
       <StyledInput
@@ -13,7 +18,7 @@ const FormField = ({ placeholder, isTextArea = false, data: { name, value, isErr
         onChange={handleOnChange}
         name={name}
       />
-      {isError ? <span>Can't be empty</span> : null}
+      {isError ? <span>{errorMessage}</span> : null}
     </Wrapper>
   );
 };

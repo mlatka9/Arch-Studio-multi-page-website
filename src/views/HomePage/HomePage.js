@@ -60,8 +60,8 @@ const HomePage = () => {
           {portfolioData
             .filter((item) => featuredPortfolioCards.includes(item.id))
             .map((item) => (
-              <Link to="/portfolio">
-                <PortfolioCard key={item.id} imgageSrc={item.image} title={item.title} subtitle="View All Projekt" />
+              <Link to="/portfolio" key={item.id}>
+                <PortfolioCard imgageSrc={item.image} title={item.title} subtitle="View All Projekt" />
               </Link>
             ))}
           <Link to="portfolio">

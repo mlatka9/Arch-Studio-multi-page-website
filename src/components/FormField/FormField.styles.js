@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.div`
   width: 100%;
-  /* max-width: 730px; */
   min-height: ${({ isTextArea }) => (isTextArea ? '80px' : '50px')};
   max-height: 400px;
   position: relative;
@@ -44,5 +43,3 @@ export const StyledInput = styled.input`
     letter-spacing: 0.4px;
   }
 `;
-
-
