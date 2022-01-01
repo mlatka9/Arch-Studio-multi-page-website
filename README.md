@@ -1,4 +1,4 @@
-# Frontend Mentor - Arch Studio multi-page website solution
+# Frontend Mentor - Arch Studio multi-page website
 
 This is a solution to the [Arch Studio multi-page website challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/arch-studio-multipage-website-wNIbOFYR6). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
 
@@ -16,6 +16,9 @@ Users should be able to:
 - **Bonus**: View actual locations on the contact page map.
 
 ### Screenshot
+
+![Screenshot](https://user-images.githubusercontent.com/72691985/147860296-4856cffa-9710-4dff-b12c-15877f37b54a.PNG)
+
 
 
 ### Links
