@@ -18,10 +18,10 @@ export const HeroWrapper = styled.div`
   }
   @media (max-width: 700px) {
     margin-bottom: 100px;
-  }
-  @media (max-width: 500px) {
+    height: unset;
     grid-template-columns: 1fr 35px;
   }
+
   h1 {
     grid-column: 1 / 4;
     grid-row: 1 / 2;
@@ -46,19 +46,13 @@ export const HeroWrapper = styled.div`
   }
   h2 {
     margin-bottom: 35px;
-    @media (max-width: 950px) {
-      font-size: 45px;
-    }
-    @media (max-width: 850px) {
-      font-size: ${({ theme }) => theme.fontSize.l};
-    }
+
     @media (max-width: 560px) {
-      font-size: 40px;
       line-height: 48px;
       margin-bottom: 0px;
     }
-    @media (max-width: 420px) {
-      font-size: 35px;
+    @media (max-width: 700px) {
+      margin-bottom: 5px;
     }
   }
 `;
@@ -93,7 +87,7 @@ export const DetailsWrapper = styled.div`
   grid-row: 2 / 3;
   z-index: 10;
   @media (max-width: 1100px) {
-    padding-left: 80px;
+    padding-left: 65px;
   }
   @media (max-width: 850px) {
     grid-column: 1 / 4;

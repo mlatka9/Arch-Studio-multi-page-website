@@ -148,7 +148,7 @@ export const MenuButton = styled.div`
 export const MenuBackDrop = styled(motion.div)`
   position: fixed;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.6);
   z-index: 80;
   display: none;
   @media (max-width: 700px) {

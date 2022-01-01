@@ -9,6 +9,7 @@ import { Link } from 'react-router-dom';
 import { HeroViewWrapper, WelcomeWrapper, FeaturedViewWrapper, FeaturedCardsWrapper } from './HomePage.styles';
 import PortfolioCard from 'components/PortfolioCard/PortfolioCard';
 import portfolioData from 'views/PortfolioPage/portfolio-data';
+import Title from 'components/Title/Title';
 
 const featuredPortfolioCards = [4, 6, 5];
 
@@ -19,7 +20,7 @@ const HomePage = () => {
       <WelcomeWrapper>
         <h1>Welcome</h1>
         <div>
-          <h2>Welcome to Arch Studio</h2>
+          <Title>Welcome to Arch Studio</Title>
           <p>
             We have a unique network and skillset to help bring your projects to life. Our small team of highly skilled
             individuals combined with our large network put us in a strong position to deliver exceptional results.
@@ -50,7 +51,7 @@ const HomePage = () => {
       </HeroViewWrapper>
       <FeaturedViewWrapper>
         <div>
-          <h2>Featured</h2>
+          <Title>Featured</Title>
           <Link to="/portfolio">
             <Button label="See All" hasArrow />
           </Link>

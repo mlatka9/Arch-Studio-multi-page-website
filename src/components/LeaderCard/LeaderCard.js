@@ -5,17 +5,12 @@ import { Link } from 'react-router-dom';
 
 const Wrapper = styled.div`
   display: grid;
-  /* width: fit-content; */
   grid-template-rows: auto auto auto 32px;
   img {
     grid-row: 1 / 2;
     grid-column: 1 / 2;
     display: block;
     width: 100%;
-    /* max-width: 350px; */
-    @media (max-width: 700px) {
-      /* max-width: max-co; */
-    }
   }
   h3,
   p {

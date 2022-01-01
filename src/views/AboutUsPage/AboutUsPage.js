@@ -46,10 +46,11 @@ const HeritageWrapper = styled.div`
   @media (max-width: 700px) {
     padding: 0 30px;
     margin-bottom: 100px;
+    gap: 0;
   }
   img {
     display: block;
-    width: 100%;
+    /* width: 100%; */
     max-width: 540px;
     object-fit: cover;
     margin-left: auto;
@@ -60,6 +61,9 @@ const HeritageWrapper = styled.div`
   h2 {
     margin-bottom: 50px;
     width: min-content;
+    @media (max-width: 700px) {
+      margin-bottom: 20px;
+    }
   }
 
   p {

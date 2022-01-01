@@ -21,24 +21,21 @@ const menu = {
   hidden: {
     opacity: 0,
     y: 0,
-    transition: {
-      duration: 0.4,
-    },
   },
   show: {
     opacity: 1,
     y: 213,
     transition: {
-      duration: 0.5,
-      delayChildren: 0.3,
-      staggerChildren: 0.15,
+      duration: 0.35,
+      delayChildren: 0.2,
+      staggerChildren: 0.12,
     },
   },
   exit: {
     opacity: 0,
     y: 0,
     transition: {
-      duration: 0.4,
+      duration: 0.35,
     },
   },
 };
@@ -107,7 +104,12 @@ const Header = () => {
                 <motion.span variants={menuItem}>Contact</motion.span>
               </NavLink>
             </MobileNavigation>
-            <MenuBackDrop initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} />
+            <MenuBackDrop
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={handleCloseMenu}
+            />
           </>
         ) : null}
       </AnimatePresence>

@@ -1,4 +1,4 @@
-import styled, { ThemeProvider } from 'styled-components';
+import { ThemeProvider } from 'styled-components';
 import { theme } from 'styles/theme';
 import Header from 'components/Header/Header';
 import { Routes, Route, Navigate } from 'react-router-dom';
@@ -9,24 +9,7 @@ import PortfolioPage from './PortfolioPage/PortfolioPage';
 import AboutUsPage from './AboutUsPage/AboutUsPage';
 import ContactPage from './ContactPage/ContactPage';
 import Footer from 'components/Footer/Footer';
-
-const Content = styled.main`
-  padding: 0 165px;
-  @media (max-width: 1200px) {
-    padding: 0 120px;
-  }
-  @media (max-width: 850px) {
-    padding: 0 100px;
-  }
-  @media (max-width: 700px) {
-    padding: 0;
-  }
-`;
-
-const Wrapper = styled.div`
-  max-width: 1700px;
-  margin: 0 auto;
-`;
+import { Content, Wrapper } from './App.styles';
 
 function App() {
   return (

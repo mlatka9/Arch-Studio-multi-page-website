@@ -41,13 +41,7 @@ export const WelcomeWrapper = styled.section`
     }
   }
   h2 {
-    font-size: ${({ theme }) => theme.fontSize.l};
-    letter-spacing: -2px;
-    margin: 0 0 60px;
-    @media (max-width: 1200px) {
-      margin: 0;
-      font-size: 40px;
-    }
+    margin-bottom: 60px;
   }
 
   div {
@@ -76,13 +70,7 @@ export const HeroViewWrapper = styled(SliderViewWrapper)`
     margin: 100px 0 100px;
   }
   h2 {
-    font-size: ${({ theme }) => theme.fontSize.l};
-    display: block;
-    max-width: 400px;
     margin-bottom: 40px;
-    @media (max-width: 700px) {
-      font-size: 40px;
-    }
   }
 `;
 
@@ -99,10 +87,11 @@ export const FeaturedViewWrapper = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    h2 {
+    margin-bottom: 40px;
+    /* h2 {
       font-size: ${({ theme }) => theme.fontSize.l};
       font-weight: bold;
-    }
+    } */
     button {
       display: flex;
       @media (max-width: 700px) {
