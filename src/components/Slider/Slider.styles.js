@@ -19,6 +19,10 @@ export const SliderViewWrapper = styled.div`
   @media (max-width: 700px) {
     height: 560px;
   }
+  picture {
+    top: 0;
+    position: absolute;
+  }
   img {
     width: 100%;
     height: 100%;
@@ -71,6 +75,9 @@ export const SliderDetails = styled.div`
 `;
 
 export const SliderImageWrapper = styled.picture`
+  img {
+    opacity: ${({ isCurrent }) => (isCurrent ? '1' : '0')};
+  }
   overflow: hidden;
   display: block;
   width: 100%;

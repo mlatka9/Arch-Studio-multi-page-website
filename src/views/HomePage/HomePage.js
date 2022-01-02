@@ -37,7 +37,7 @@ const HomePage = () => {
         <img src={welcomeImage} alt="Arch studio"></img>
       </WelcomeWrapper>
       <HeroViewWrapper>
-        <SliderImageWrapper>
+        <SliderImageWrapper isCurrent={true}>
           <source srcSet={Hero} media="(min-width: 850px)" />
           <source srcSet={HeroTablet} media="(min-width: 700px)" />
           <img src={HeroMobile} alt="Small team, big ideas" />

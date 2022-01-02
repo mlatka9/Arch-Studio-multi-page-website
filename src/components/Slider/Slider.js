@@ -8,23 +8,32 @@ import { sliderData } from './sliderData';
 
 const transtionAnimation = { duration: 0.5, times: 'easeInOut' };
 
+const SliderImage = ({ isCurrent, imageNumber }) => {
+  return (
+    <SliderImageWrapper isCurrent={isCurrent}>
+      <source srcSet={sliderData[imageNumber].images.desktop} media="(min-width: 850px)" />
+      <source srcSet={sliderData[imageNumber].images.tablet} media="(min-width: 700px)" />
+      <motion.img
+        src={sliderData[imageNumber].images.mobile}
+        alt={sliderData[imageNumber].title}
+        animate={{ scale: 1 }}
+        initial={{ scale: 1.07 }}
+        transition={transtionAnimation}
+      />
+    </SliderImageWrapper>
+  );
+};
+
 const Slider = () => {
   const [currentPage, setCurrentPage] = useState(0);
 
   return (
     <AnimatePresence exitBeforeEnter>
       <SliderViewWrapper key={currentPage}>
-        <SliderImageWrapper>
-          <source srcSet={sliderData[currentPage].images.desktop} media="(min-width: 850px)" />
-          <source srcSet={sliderData[currentPage].images.tablet} media="(min-width: 700px)" />
-          <motion.img
-            src={sliderData[currentPage].images.mobile}
-            alt={sliderData[currentPage].title}
-            animate={{ scale: 1, opacity: 1 }}
-            initial={{ scale: 1.07, opacity: 0 }}
-            transition={transtionAnimation}
-          />
-        </SliderImageWrapper>
+        <SliderImage imageNumber={0} isCurrent={0 === currentPage} />
+        <SliderImage imageNumber={1} isCurrent={1 === currentPage} />
+        <SliderImage imageNumber={2} isCurrent={2 === currentPage} />
+        <SliderImage imageNumber={3} isCurrent={3 === currentPage} />
         <SliderDetails>
           <motion.h2
             initial={{ y: -40, opacity: 0 }}

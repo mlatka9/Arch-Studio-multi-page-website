@@ -41,7 +41,7 @@ const defaultCenter = {
   lng: locations.reduce((sum, location) => location.lng + sum, 0) / locations.length,
 };
 
-const Map = React.forwardRef(({ location, zoomLevel }, ref) => (
+const Map = React.forwardRef((_, ref) => (
   <Wrapper ref={ref}>
     <GoogleMapReact
       bootstrapURLKeys={{ key: 'AIzaSyAGSzpjVkyij2Lf8shfPHVRJu4mFaD_ieM' }}
@@ -49,10 +49,8 @@ const Map = React.forwardRef(({ location, zoomLevel }, ref) => (
       defaultZoom={5}
     >
       {locations.map((location) => (
-        <LocationPin lat={location.lat} lng={location.lng} text={location.address} />
+        <LocationPin key={location.address} lat={location.lat} lng={location.lng} text={location.address} />
       ))}
-
-      <LocationPin lat={locations[0].lat} lng={locations[0].lng} text={locations[0].address} />
     </GoogleMapReact>
   </Wrapper>
 ));
