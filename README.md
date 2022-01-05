@@ -24,7 +24,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Github](https://github.com/mlatka9/Arch-Studio-multi-page-website)
-- Live Site URL: [Link](https://61d08972c24929e8d8dcadb6--heuristic-dubinsky-16cbbb.netlify.app/)
+- Live Site URL: [Link](https://heuristic-dubinsky-16cbbb.netlify.app/)
 
 ## My process
 
